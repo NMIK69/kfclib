@@ -143,7 +143,7 @@ def kalman_update(ax, ay, az):
 	py = p[2]
 	pz = p[3]
 	
-	H = np.array([[px, -pw, pz, -py],
+	H = 2 * np.array([[px, -pw, pz, -py],
 		      [py, -pz, -pw, px],
 		      [pz, py, -px, -pw]])
 
