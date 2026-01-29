@@ -263,7 +263,7 @@ $$
 
 ## Kalman Filter Design (9dof-IMU)
 The only thing that changes in the 9DoF variant is the design of the $H$
-and $R$ matrix.
+and $R$ matrix as well as the measurement vector $z$:
 
 ### Observation matrix
 $$
@@ -298,6 +298,20 @@ $$
 $$
 
 
+### Measurement vector
+The accelerometer and magnetometer measurements are used for the measurement vector.
+
+$$
+\mathbf{z} = 
+\begin{bmatrix}
+a_x\\
+a_y\\
+a_z\\
+m_x\\
+m_y\\
+m_z
+\end{bmatrix}
+$$
 
 ### Measurement Covariance Matrix
 The measurement covariance matrix is an identity matrix with the accelerometer
