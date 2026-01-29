@@ -31,6 +31,16 @@ void matrix_fill_diag(struct matrix *M, float val);
 void matrix_print(struct matrix *M);
 
 float matrix_det3x3(struct matrix *M);
+float matrix_det2x2(struct matrix *M);
+float matrix_det(struct matrix *M);
+struct matrix *matrix_make_minor(struct matrix *M, 
+		size_t row, size_t col, int in_place,
+		struct matrix *M_minor);
+struct matrix *make_cofactor(struct matrix *M);
+struct matrix *matrix_make_adjunct(struct matrix *M);
+struct matrix *matrix_inv_ana(struct matrix *M);
+
+int matrix_get_alloc_free_cnt(void);
 
 struct matrix *matrix_inv3x3(struct matrix *M);
 struct matrix *matrix_mmul(struct matrix *M1, struct matrix *M2);
@@ -39,6 +49,7 @@ struct matrix *matrix_madd(struct matrix *M1, struct matrix *M2);
 struct matrix *matrix_msub(struct matrix *M1, struct matrix *M2);
 void matrix_smul(struct matrix *M, float s);
 
+struct matrix *matrix_make_I(size_t N);
+struct matrix *matrix_inv_gj(struct matrix *M);
 
 #endif
-
