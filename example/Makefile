@@ -3,8 +3,8 @@ CFLAGS=-Wall -pedantic -std=c99 -Wextra -Wmissing-prototypes
 OPTIMIZE=-O3
 LDFLAGS=-lm
 
-SRCS=$(wildcard ../*.c)
-OBJS=$(patsubst ../%.c, ./%.o, $(SRCS))
+SRCS=$(wildcard ../kfclib/*.c)
+OBJS=$(patsubst ../kfclib/%.c, ./%.o, $(SRCS))
 
 TARGET=example
 
@@ -33,7 +33,7 @@ $(TARGET) : $(OBJS) $(TARGET).o
 %.o : %.c
 	$(CC) $(CFLAGS) $(OPTIMIZE) -c $< -o $@
 
-%.o : ../%.c
+%.o : ../kfclib/%.c
 	$(CC) $(CFLAGS) $(OPTIMIZE) -c $< -o $@
 
 .PHONY : clean

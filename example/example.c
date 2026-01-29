@@ -5,8 +5,8 @@
 #include <math.h>
 #include <time.h>
 
-#include "../matrix.h"
-#include "../kalman.h"
+#include "../kfclib/matrix.h"
+#include "../kfclib/kalman.h"
 
 #define ARR_SIZE(arr) (sizeof(arr) / sizeof(*arr))
 #define MM_PI 3.14159265358979323846f
